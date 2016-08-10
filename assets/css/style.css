@@ -1,0 +1,185 @@
+#logo_text
+{
+	border: none;
+	background-color: green;
+	padding:0 15px 0 15px;
+
+}
+#login_container
+{
+	margin: 0 auto;
+	width: 350px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+#login_button
+{
+	margin: 30px auto 30px auto;
+}
+
+#error_box
+{
+	margin: 0 auto;
+	width: 500px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	padding:5px;
+}
+
+#add_user
+{
+	margin: 10 auto 10 auto;
+	padding:10px 10px 30px 10px;
+	font-size: 12px !important;
+
+}
+
+.style-4 td
+{
+	padding: 10px;
+}
+
+
+.style-4 input[type="text"],input[type="date"], textarea {
+  padding: 10px;
+  border: solid 1px gainsboro;
+  -webkit-transition: box-shadow 0.3s, border 0.3s;
+  -moz-transition: box-shadow 0.3s, border 0.3s;
+  -o-transition: box-shadow 0.3s, border 0.3s;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.style-4 input[type="text"]:focus, .style-4 input[type="text"].focus, 
+.style-4 input[type="date"]:focus, .style-4 input[type="date"].focus,
+.style-4 textarea:focus, .style-4 textarea.focus{
+  border: solid 1px teal;
+  -webkit-box-shadow: 0 0 5px 1px teal;
+  -moz-box-shadow: 0 0 5px 1px teal;
+  box-shadow: 0 0 5px 1px teal;
+}
+
+
+.add_form
+{
+	color:green;
+	font-size:18px;
+	padding:12px 20px 0 0;
+	margin-top:10px;
+}
+
+
+#customer_table
+{
+	font-size: 12px;
+	margin-bottom: 20px;
+}
+
+#wrapper
+ {
+	min-height:100%;
+	position:relative;
+}
+#footer
+{
+	text-align: center;
+	position:absolute;
+	bottom:0;
+	width: 100%;
+	height: 40px;
+}
+
+html, body
+{
+	margin:0;
+	padding:0;
+	height:100%;
+}
+::-webkit-input-placeholder {
+   color: transparent;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: transparent;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: transparent;  
+}
+
+:-ms-input-placeholder {  
+   color: transparent;  
+}
+@media only screen and (max-device-width: 960px){
+::-webkit-input-placeholder {
+   color: gray;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: gray;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: gray;  
+}
+
+:-ms-input-placeholder {  
+   color: gray;  
+}
+ .add_form
+ {
+ 	display: none !important;
+ }
+}
+
+table.tablesorter .header {
+	background-image: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-position: left center; 
+	padding-left: 28px;
+	padding-top: 8px;	
+}
+table.tablesorter .headerSortUp {
+	background-image: url(../img/asc.png);
+	background-position: left center; 
+	background-repeat: no-repeat;
+}
+table.tablesorter .headerSortDown {
+	background-image: url(../img/desc.png);
+	background-repeat: no-repeat;
+	background-position: left center; 
+}
+
+
+input[type=checkbox]:not(old),
+input[type=radio   ]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+input[type=checkbox]:not(old) + label,
+input[type=radio   ]:not(old) + label{
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url(../img/checks.png) no-repeat 0 0;
+  line-height  : 24px;
+}
+
+input[type=checkbox]:not(old):checked + label{
+  background-position : 0 -24px;
+}
+
+input[type=radio]:not(old):checked + label{
+  background-position : 0 -48px;
+}
+
+th
+{
+	text-align: center !important;
+	background-color: #236B8E;
+	color: #F9F9F9;
+}
