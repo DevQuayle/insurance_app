@@ -21,6 +21,10 @@
     <td> <label class="add_form">PESEL:</label></td>
     <td><input name="pesel" placeholder="PESEL" pattern="[0-9]{11}" title="PESEL składa się z 11 cyfr" type="text"  required></td>
   </tr>
+     <tr>
+         <td> <label class="add_form">E-mail:</label></td>
+         <td><input name="mail" placeholder="e-mail" type="text"  > </td>
+     </tr>
   <tr>
     <td> <label class="add_form">Ulica:</label></td>
     <td><input name="street" placeholder="Ulica" type="text"  required> </td>
@@ -67,6 +71,18 @@
     <td> <input name="born_date_salaried"  placeholder="Data ur uposażonej"  type="date"  required></td>
   </tr>
 
+     <tr>
+         <td> <label class="add_form">Imie osoby współubezpieczonej:</label></td>
+         <td> <input name="name_co-insured"  type="text"  ></td>
+     </tr>
+     <tr>
+         <td> <label class="add_form">Nazwisko osoby współubezpieczonej:</label></td>
+         <td> <input name="surname_co-insured" " type="text"  required></td>
+     </tr>
+     <tr>
+         <td> <label class="add_form">PESEL osoby współubezpieczonej:</label></td>
+         <td> <input name="pesel_co-insured"    type="text"  ></td>
+     </tr>
   <tr>
     <td><label class="add_form">Produkty:</label> </td>
    </tr>
@@ -78,20 +94,51 @@
         echo "<input name='id_product_".$i."' type='text'  hidden value='".$row->id."'>";
         echo "<tr><td><input onclick='enableDisable(this.checked,".$i.")' name='cb_".$i."' value='".$row->product_name."' type='checkbox'> <label style=' margin-top:10px;'for='".$row->product_name."'>".$row->product_name."</label></td> ";
         if($row->if_required == '1')
-          echo "<td> Nr ser: <input id='".$i."' disabled name='tx_".$i."' type='text'  required>  - wymagane</td></tr>";
+          echo "<td> Nr ser: <input class='product_serial' id='".$i."' disabled name='tx_".$i."' type='text'  required>  - wymagane</td></tr>";
         else
-          echo "<td>Nr ser: <input id='".$i."' disabled name='tx_".$i."' type='text' > </td></tr>";
+          echo "<td>Nr ser: <input class='product_serial' id='".$i."' disabled name='tx_".$i."' type='text' > </td></tr>";
     }
     echo "<input name='product_counter' type='text'  hidden value='".$i."'>";
     ?>
 </table>
-
+<input id="base_url" type="hidden" value="<?php echo  base_url(); ?>" >
 </div>
 <script language="javascript">
     function enableDisable(bEnable, textBoxID)
     {
          document.getElementById(textBoxID).disabled = !bEnable
     }
+
+    $(document).ready(function() {
+        const BASEURL = $('#base_url').val();
+        var valid = true;
+
+       $('form').find('.product_serial').keyup(function() {
+           $input = $(this);
+           var serial = $(this).val();
+           $.ajax({
+                type: 'POST',
+                url: BASEURL+'customers/check_serial_number',
+                data: {"serial":serial},
+                dataType:'json',
+
+                success: function(data, status) {
+                    if(data.status == 'ok'){
+                        $input.css('background','rgba(14, 160, 33, 0.47)');
+                         valid = true;
+                        $('#login_button').attr('disabled',false);
+                    }else{
+                        $input.css('background','rgba(160, 14, 14, 0.47)');
+                        vlid = false;
+                        $('#login_button').attr('disabled',true);
+                    }
+
+                }
+
+            });
+       });
+
+    });
 </script>
   <input id="login_button" name="mit" type="submit" class="w3-btn blue" value="Dodaj" />
   <input type="reset" class="w3-btn red" value="Reset!">

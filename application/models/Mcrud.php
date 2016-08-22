@@ -33,6 +33,11 @@ class Mcrud extends CI_Model {
   $name_salaried = $this->input->post('name_salaried');
   $surname_salaried = $this->input->post('surname_salaried');
   $born_date_salaried = $this->input->post('born_date_salaried');
+  $mail = $this->input->post('mail');
+
+  $name_insured = $this->input->post('name_co-insured');
+  $surname_insured = $this->input->post('surname_co-insured');
+  $pesel_insured = $this->input->post('pesel_co-insured');
 
   $startDate = new DateTime($this->input->post('start_date'));
   $startDate->modify( '+15 day' );
@@ -60,6 +65,10 @@ class Mcrud extends CI_Model {
    'name_salaried' => $name_salaried,
    'surname_salaried' => $surname_salaried,
    'born_date_salaried' => $born_date_salaried,
+   'name_co_insured' => $name_insured,
+   'surname_co_insured' => $surname_insured,
+   'pesel_co_insured' => $pesel_insured,
+   'mail' => $mail,
    'id_user' => $user->id
   );
 
@@ -216,11 +225,15 @@ public function searchInAll ()
             $_POST['name_salaried'] = $row->name_salaried;
             $_POST['surname_salaried'] = $row->surname_salaried;
             $_POST['born_date_salaried'] = $row->born_date_salaried;
+            $_POST['name_co_insured'] = $row->name_co_insured;
+            $_POST['surname_co_insured'] = $row->surname_co_insured;
+            $_POST['pesel_co_insured'] = $row->pesel_co_insured;
+            $_POST['mail'] = $row->mail;
         }
 
     ob_start();
        include('./assets/library/html2pdf.class.php');
-       include ('./assets/library/deklaracja.php');
+       include ('./assets/library/deklaracja2.php');
 
        $content = ob_get_clean();
 
@@ -317,7 +330,11 @@ public function searchInAll ()
   $name_salaried = $this->input->post('name_salaried');
   $surname_salaried = $this->input->post('surname_salaried');
   $born_date_salaried = $this->input->post('born_date_salaried');
+     $mail = $this->input->post('mail');
 
+     $name_insured = $this->input->post('name_co-insured');
+     $surname_insured = $this->input->post('surname_co-insured');
+     $pesel_insured = $this->input->post('pesel_co-insured');
   $startDate = new DateTime($this->input->post('start_date'));
   $startDate->modify( '+15 day' );
 
@@ -342,7 +359,11 @@ public function searchInAll ()
    'stop_date' => $stopDate->format('Y-m-d'),
    'name_salaried' => $name_salaried,
    'surname_salaried' => $surname_salaried,
-   'born_date_salaried' => $born_date_salaried
+   'born_date_salaried' => $born_date_salaried,
+      'name_co_insured' => $name_insured,
+      'surname_co_insured' => $surname_insured,
+      'pesel_co_insured' => $pesel_insured,
+      'mail' => $mail,
    );
 
   $this->db->where('id', $id);
@@ -369,5 +390,10 @@ public function searchInAll ()
   {
     $d = $this->db->get_where('customers', array('id' => $a))->row();
     return $d;
+  }
+
+  function check_serial($serial){
+      $ambil = $this->db->get_where('customer_product',array('serial_number' => $serial));
+      return $ambil->num_rows();
   }
 }

@@ -352,7 +352,8 @@ function updateCustomer()
       else 
       {
         $dt = $this->mcrud->editCustomer($kd);
-        
+
+
    		$data['name'] = $dt->name;
    		$data['surname'] = $dt->surname;
    		$data['pesel'] = $dt->pesel;
@@ -369,7 +370,11 @@ function updateCustomer()
    		$data['surname_salaried'] = $dt->surname_salaried;
    		$data['born_date_salaried'] = $dt->born_date_salaried;
    		$data['products_c'] = $dt->products;
-        
+   		$data['name_co_insured'] = $dt->name_co_insured;
+   		$data['surname_co_insured'] = $dt->surname_co_insured;
+   		$data['pesel_co_insured'] = $dt->pesel_co_insured;
+   		$data['mail'] = $dt->mail;
+
         $data['products'] = $this->mcrud->showAllProducts();
 
         $this->load->view('template/header');
@@ -408,7 +413,11 @@ function updateCustomer()
    		$data['surname_salaried'] = $dt->surname_salaried;
    		$data['born_date_salaried'] = $dt->born_date_salaried;
    		$data['products_c'] = $dt->products;
-        
+        $data['name_co_insured'] = $dt->name_co_insured;
+        $data['surname_co_insured'] = $dt->surname_co_insured;
+        $data['pesel_co_insured'] = $dt->pesel_co_insured;
+        $data['mail'] = $dt->mail;
+
         $data['products'] = $this->mcrud->showAllProducts();
 
         $this->load->view('template/header');
@@ -417,6 +426,16 @@ function updateCustomer()
         $this->load->view('template/footer');
         }
 
+    }
+ }
+
+ public function check_serial_number(){
+    if(isset($_POST['serial'])){
+        if($this->mcrud->check_serial($_POST['serial']) > 0){
+           echo json_encode(array('status'=>'err'));
+        }else{
+          echo  json_encode(array('status'=>'ok'));
+        }
     }
  }
 }
