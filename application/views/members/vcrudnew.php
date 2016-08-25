@@ -30,12 +30,12 @@
     <td><input name="street" placeholder="Ulica" type="text"  required> </td>
   </tr>
   <tr>
-    <td> <label class="add_form">Nr. domu:</label></td>
-    <td> <input name="house_number" placeholder="Nr. domu"  type="text"  required></td>
+    <td> <label class="add_form">Nr domu:</label></td>
+    <td> <input name="house_number" placeholder="Nr domu"  type="text"  required></td>
   </tr>
   <tr>
-    <td><label class="add_form">Nr. lokalu:</label></td>
-    <td>  <input name="local_number" placeholder="Nr. Lokalu"  type="text"  ></td>
+    <td><label class="add_form">Nr lokalu:</label></td>
+    <td>  <input name="local_number" placeholder="Nr Lokalu"  type="text"  ></td>
   </tr>
   <tr>
     <td><label class="add_form">Kod pocztowy:</label> </td>
@@ -46,8 +46,8 @@
     <td> <input name="city"  placeholder="Miejscowość" type="text"  required></td>
   </tr>
   <tr>
-    <td> <label class="add_form">Nr. telefonu:</label></td>
-    <td> <input name="phone_number" placeholder="Nr. telefonu"  type="text"  required></td>
+    <td> <label class="add_form">Nr telefonu:</label></td>
+    <td> <input name="phone_number" placeholder="Nr telefonu"  type="text"  required></td>
   </tr>
   <tr>
     <td> <label class="add_form">Data start:</label></td>

@@ -31,12 +31,12 @@
     <td><input value = "<?= $street ?>" name="street" placeholder="Ulica" type="text"  required> </td>
   </tr>
   <tr>
-    <td> <label class="add_form">Nr. domu:</label></td>
-    <td> <input value = "<?= $house_number ?>" name="house_number" placeholder="Nr. domu"  type="text"  required></td>
+    <td> <label class="add_form">Nr domu:</label></td>
+    <td> <input value = "<?= $house_number ?>" name="house_number" placeholder="Nr domu"  type="text"  required></td>
   </tr>
   <tr>
-    <td><label class="add_form">Nr. lokalu:</label></td>
-    <td>  <input value = "<?= $local_number ?>" name="local_number" placeholder="Nr. Lokalu"  type="text"  ></td>
+    <td><label class="add_form">Nr lokalu:</label></td>
+    <td>  <input value = "<?= $local_number ?>" name="local_number" placeholder="Nr Lokalu"  type="text"  ></td>
   </tr>
   <tr>
     <td><label class="add_form">Kod pocztowy:</label> </td>
@@ -47,8 +47,8 @@
     <td> <input value = "<?= $city ?>" name="city"  placeholder="Miejscowość" type="text"  required></td>
   </tr>
   <tr>
-    <td> <label class="add_form">Nr. telefonu:</label></td>
-    <td> <input value = "<?= $phone_number ?>" name="phone_number" placeholder="Nr. telefonu"  type="text"  required></td>
+    <td> <label class="add_form">Nr telefonu:</label></td>
+    <td> <input value = "<?= $phone_number ?>" name="phone_number" placeholder="Nr telefonu"  type="text"  required></td>
   </tr>
   <tr>
     <td> <label class="add_form">Data start:</label></td>

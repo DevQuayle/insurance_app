@@ -33,7 +33,7 @@
     .email{
         position: absolute;
         top: 233px;
-        left: 580px;
+        left: 560px;
     }
     .adress{
         position: absolute;
@@ -71,10 +71,17 @@
 
 
 
+.date_start{
+    position: absolute;
+    top: 710px;
+    left: 420px;
+}
+
+
 </style>
 <page id="page1">
     <img src="assets/img/PDF.jpg" class="bg" style="" />
-    <div class="numer_zamowienia"><?= $_POST['certificate']; ?></div>
+    <div class="numer_zamowienia"><?= $_POST['serial_number']; ?></div>
     <div class="imie-nazwisko"> <?= $_POST['name'];?>  <?= $_POST['surname'];?></div>
     <div class="pesel"><?= $_POST['pesel'];?></div>
     <div class="telefon"><?= $_POST['phone_number'];?></div>
@@ -88,8 +95,9 @@
     <div class="data_ur_upozazonego"><?= $_POST['born_date_salaried'];?></div>
 
 </page>
-<page>
+<page id="page2">
     <img src="assets/img/PDF2.jpg" class="bg2" style="" />
+    <div class="date_start"><?= $_POST['start_date']; ?></div>
 
 </page>
 

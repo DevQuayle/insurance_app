@@ -40,7 +40,7 @@ class Mcrud extends CI_Model {
   $pesel_insured = $this->input->post('pesel_co-insured');
 
   $startDate = new DateTime($this->input->post('start_date'));
-  $startDate->modify( '+15 day' );
+  $startDate->modify( '+16 day' );
 
   $stopDate = new DateTime($startDate->format( 'Y-m-d' ));
   $stopDate->modify('+1 year');
@@ -205,8 +205,19 @@ public function searchInAll ()
     $query="SELECT *
         FROM customers 
         WHERE id=".$id;
+
+      $query2 = "SELECT *
+        FROM customer_product
+        LEFT JOIN products ON products.id = customer_product.id_product
+        WHERE customer_product.id_customer = $id AND products.if_required = '1'
+      ";
         
         $select = $this->db->query($query);
+        $select2 = $this->db->query($query2);
+
+
+        $select2 = $select2->result();
+
 
         foreach ($select->result() as $row)
         {
@@ -229,6 +240,7 @@ public function searchInAll ()
             $_POST['surname_co_insured'] = $row->surname_co_insured;
             $_POST['pesel_co_insured'] = $row->pesel_co_insured;
             $_POST['mail'] = $row->mail;
+            $_POST['serial_number'] = (!empty($select2[0]->serial_number)) ? $select2[0]->serial_number : FALSE ;
         }
 
     ob_start();
