@@ -7,8 +7,6 @@ class Customers extends CI_Controller
 		parent::__construct();
 		$this->lang->load('auth');
 		$this->load->model('mcrud');
-		
-		
 	}
 
 	public function showAll()

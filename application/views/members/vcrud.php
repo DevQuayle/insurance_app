@@ -41,6 +41,7 @@
             <th>Certyfikat klienta</th>
             <th>Imie klienta</th>
             <th>Nazwisko klienta</th>
+            <th>E-mail klienta</th>
             <th>PESEL klienta</th>
             <th>Adres klienta</th>
             <th>Telefon klienta</th>
@@ -50,6 +51,8 @@
             <th>Wybrane produkty</th>
             <th>Osoa uposażona</th>
             <th>Data ur. <br> Uposażonej</th>
+            <th>Osoba współub.</th>
+            <th>Pesel wsóółub.</th>
             <th style="vertical-align: middle;" width="100px">AKCJA</th>
           </tr>
         </thead>
@@ -62,6 +65,7 @@
             <td><?= $row->certificate; ?></td>
             <td><?= $row->name; ?></td>
             <td><?= $row->surname; ?></td>
+            <td><?= $row->mail; ?></td>
             <td><?= $row->pesel;?></td>
             <td><?= $adres;?></td>
             <td><?= $row->phone_number ;?></td>
@@ -79,13 +83,15 @@
                 echo "<td>";
                 foreach ($ambil->result() as $data) 
                 {
-                  echo $data->product_name ." <br> Nr.ser:" . $data->serial_number . " <br>-------------------------<br>";
+                  echo $data->product_name ." Nr. ser:" . $data->serial_number . " <br>------------------------------<br>";
                 }
                 echo "</td>";
             ?>
             
             <td><?= $row->name_salaried . ' ' . $row->surname_salaried ;?></td>
             <td><?= $row->born_date_salaried ;?></td>
+            <td><?= $row->name_co_insured .' '. $row->surname_co_insured  ;?></td>
+            <td><?= $row->pesel_co_insured ;?></td>
             <td style="text-align: center; vertical-align: middle; ">
               <a href="<?php echo site_url('customers/report/' . $row->id); ?>" target="_blank" class="btn btn-info btn-xs"><span class=" glyphicon glyphicon-list-alt" aria-hidden="true"></span></a>
               <a href="<?php echo site_url('customers/editCustomer/' . $row->id); ?>" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
