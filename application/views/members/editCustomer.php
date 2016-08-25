@@ -17,6 +17,11 @@
     <td><label class="add_form"> Nazwisko: </label></td>
     <td><input value = "<?= $surname ?>" name="surname" placeholder="Nazwisko" pattern="[A-Za-z,ą, ć, ę, ł, ń, ó, ś, ź, ż]{2,}" title="" type="text" required></td>
   </tr>
+     <tr>
+         <td> <label class="add_form">E-mail:</label></td>
+         <td><input value = "<?= $mail ?>" name="mail"  type="text" ></td>
+     </tr>
+
   <tr>
     <td> <label class="add_form">PESEL:</label></td>
     <td><input value = "<?= $pesel ?>" name="pesel" placeholder="PESEL" pattern="[0-9]{11}" title="PESEL składa się z 11 cyfr" type="text"  required></td>
@@ -67,6 +72,19 @@
     <td> <input value = "<?= $born_date_salaried ?>" name="born_date_salaried"  placeholder="Data ur uposażonej"  type="date"  required></td>
     
   </tr>
+
+     <tr>
+         <td> <label class="add_form">Imie uposażonego:</label></td>
+         <td> <input value = "<?= $name_co_insured ?>" name="name_co_insured"   type="text"  ></td>
+     </tr>
+     <tr>
+         <td> <label class="add_form">Nazwisko uposażonego:</label></td>
+         <td> <input  value = "<?= $surname_co_insured ?>" name="surname_co_insured"   type="text"  ></td>
+     </tr>
+     <tr>
+         <td> <label class="add_form">Data ur. uposażonego:</label></td>
+         <td> <input value = "<?= $pesel_co_insured ?>" name="pesel_co_insured"    type="text"  ></td>
+     </tr>
 
   <tr>
     <td><label class="add_form">Produkty:</label> </td>
