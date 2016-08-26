@@ -10,8 +10,8 @@
   <input hidden value = "<?= $this->uri->segment(3) ?>" name="id_customer" type="text" >
  <table style="width:auto; margin-top:30px;">
   <tr>
-    <td> <label class="add_form"> Imie: </label></td>
-    <td ><input value = "<?= $name ?>" name="name" placeholder="Imie" autofocus pattern="[A-Za-z, ą, ć, ę, ł, ń, ó, ś, ź, ż]{2,}" title="" type="text" required> </td>
+    <td> <label class="add_form"> Imię: </label></td>
+    <td ><input value = "<?= $name ?>" name="name" placeholder="Imię" autofocus pattern="[A-Za-z, ą, ć, ę, ł, ń, ó, ś, ź, ż]{2,}" title="" type="text" required> </td>
   </tr>
   <tr>
     <td><label class="add_form"> Nazwisko: </label></td>
@@ -60,29 +60,29 @@
   </tr> 
   -->
   <tr>
-    <td> <label class="add_form">Imie uposażonego:</label></td>
-    <td> <input value = "<?= $name_salaried ?>" name="name_salaried"  placeholder="Imie os uposażonej" type="text"  required></td>
+    <td> <label class="add_form">Imię uposażonego:</label></td>
+    <td> <input value = "<?= $name_salaried ?>" name="name_salaried"  placeholder="Imię os uposażonej" type="text"></td>
   </tr>
   <tr>
     <td> <label class="add_form">Nazwisko uposażonego:</label></td>
-    <td> <input  value = "<?= $surname_salaried ?>" name="surname_salaried"  placeholder="nazwisko os uposażonej" type="text"  required></td>
+    <td> <input  value = "<?= $surname_salaried ?>" name="surname_salaried"  placeholder="nazwisko os uposażonej" type="text"></td>
   </tr>
   <tr>
     <td> <label class="add_form">Data ur. uposażonego:</label></td>
-    <td> <input value = "<?= $born_date_salaried ?>" name="born_date_salaried"  placeholder="Data ur uposażonej"  type="date"  required></td>
+    <td> <input value = "<?= $born_date_salaried ?>" name="born_date_salaried"  placeholder="Data ur uposażonej"  type="date"></td>
     
   </tr>
 
      <tr>
-         <td> <label class="add_form">Imie uposażonego:</label></td>
+         <td> <label class="add_form">Imię osoby współubezpieczonej:</label></td>
          <td> <input value = "<?= $name_co_insured ?>" name="name_co_insured"   type="text"  ></td>
      </tr>
      <tr>
-         <td> <label class="add_form">Nazwisko uposażonego:</label></td>
+         <td> <label class="add_form">Nazwisko osoby współubezpieczonej:</label></td>
          <td> <input  value = "<?= $surname_co_insured ?>" name="surname_co_insured"   type="text"  ></td>
      </tr>
      <tr>
-         <td> <label class="add_form">Data ur. uposażonego:</label></td>
+         <td> <label class="add_form">PESEL osoby współubezpieczonej:</label></td>
          <td> <input value = "<?= $pesel_co_insured ?>" name="pesel_co_insured"    type="text"  ></td>
      </tr>
 
