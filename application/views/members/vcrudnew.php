@@ -77,7 +77,7 @@
      </tr>
      <tr>
          <td> <label class="add_form">Nazwisko osoby współubezpieczonej:</label></td>
-         <td> <input name="surname_co-insured" " type="text"  required></td>
+         <td> <input name="surname_co-insured"  type="text" ></td>
      </tr>
      <tr>
          <td> <label class="add_form">PESEL osoby współubezpieczonej:</label></td>
