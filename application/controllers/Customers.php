@@ -351,7 +351,6 @@ function updateCustomer()
       {
         $dt = $this->mcrud->editCustomer($kd);
 
-
    		$data['name'] = $dt->name;
    		$data['surname'] = $dt->surname;
    		$data['pesel'] = $dt->pesel;
@@ -394,6 +393,7 @@ function updateCustomer()
       else 
       {
         $dt = $this->mcrud->editCustomer($kd);
+
         
    		$data['name'] = $dt->name;
    		$data['surname'] = $dt->surname;

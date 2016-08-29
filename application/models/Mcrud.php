@@ -344,9 +344,9 @@ public function searchInAll ()
   $born_date_salaried = $this->input->post('born_date_salaried');
      $mail = $this->input->post('mail');
 
-     $name_insured = $this->input->post('name_co-insured');
-     $surname_insured = $this->input->post('surname_co-insured');
-     $pesel_insured = $this->input->post('pesel_co-insured');
+     $name_insured = $this->input->post('name_co_insured');
+     $surname_insured = $this->input->post('surname_co_insured');
+     $pesel_insured = $this->input->post('pesel_co_insured');
   $startDate = new DateTime($this->input->post('start_date'));
   $startDate->modify( '+15 day' );
 
